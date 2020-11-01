@@ -75,17 +75,6 @@ CMAKE_BINARY_DIR = C:\Users\ngocq\CLionProjects\CocCoc\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,6 +85,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -128,6 +128,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 #=============================================================================
 # Target rules for targets named sort
@@ -239,6 +252,33 @@ sort.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort.cpp.s
 .PHONY : sort.cpp.s
 
+tst.obj: tst.cpp.obj
+
+.PHONY : tst.obj
+
+# target to build an object file
+tst.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/tst.cpp.obj
+.PHONY : tst.cpp.obj
+
+tst.i: tst.cpp.i
+
+.PHONY : tst.i
+
+# target to preprocess a source file
+tst.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/tst.cpp.i
+.PHONY : tst.cpp.i
+
+tst.s: tst.cpp.s
+
+.PHONY : tst.s
+
+# target to generate assembly for a file
+tst.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/tst.cpp.s
+.PHONY : tst.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -249,6 +289,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... CocCoc
 	@echo ... sort
+	@echo ... test
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
@@ -258,6 +299,9 @@ help:
 	@echo ... sort.obj
 	@echo ... sort.i
 	@echo ... sort.s
+	@echo ... tst.obj
+	@echo ... tst.i
+	@echo ... tst.s
 .PHONY : help
 
 

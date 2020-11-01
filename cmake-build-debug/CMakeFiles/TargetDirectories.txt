@@ -1,4 +1,5 @@
+C:/Users/ngocq/CLionProjects/CocCoc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/ngocq/CLionProjects/CocCoc/cmake-build-debug/CMakeFiles/test.dir
 C:/Users/ngocq/CLionProjects/CocCoc/cmake-build-debug/CMakeFiles/sort.dir
 C:/Users/ngocq/CLionProjects/CocCoc/cmake-build-debug/CMakeFiles/CocCoc.dir
 C:/Users/ngocq/CLionProjects/CocCoc/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/ngocq/CLionProjects/CocCoc/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -12,6 +12,7 @@ private:
     std::string obj_id;
     std::map<int,int> ctg;
 public:
+    User();
     User(std::string obj, std::string ctg_id, std::string ctg_count){
         obj_id = obj;
         ctg = ctg_cv(ctg_id, ctg_count);

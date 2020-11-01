@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ngocq/CLionProjects/CocCoc/sort.cpp
+iostream
+-
+string
+-
+fstream
+-
+sstream
+-
+queue
+-
+algorithm
+-
+
